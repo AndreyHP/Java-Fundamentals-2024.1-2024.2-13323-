@@ -15,10 +15,10 @@ public class Inventario {
 
      void printItems(){
          for (item item : items) {
-             System.out.println(item.name);
-             System.out.println(item.price);
-             System.out.println(item.Qnt);
-             System.out.println(item.code);
+             System.out.println("Nome: "+item.name);
+             System.out.println("Preço: "+item.price);
+             System.out.println("Quantidade: "+item.Qnt);
+             System.out.println("Codigo: "+item.code);
          }
      }
 }
