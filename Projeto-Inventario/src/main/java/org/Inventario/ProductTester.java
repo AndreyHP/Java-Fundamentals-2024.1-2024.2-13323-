@@ -2,6 +2,8 @@ package org.Inventario;
 
 import java.util.Scanner;
 
+import static org.Inventario.Main.scanner;
+
 public class ProductTester {
     static void addItem(Inventario inventario){
         Scanner scanner = new Scanner(System.in);
@@ -30,6 +32,31 @@ public class ProductTester {
         inventario.addItem(i);
 
 
+    }
+
+    static void removeItem(Inventario inventario){
+
+        int itemCode;
+        int itemQnt;
+
+        System.out.println("Codigo do Item");
+        itemCode = scanner.nextInt();
+        System.out.println("Qnt do Item");
+        itemQnt = scanner.nextInt();
+
+        for (int i = 0; i < inventario.items.size(); i++) {
+            int bufferCode = inventario.items.get(i).getCode();
+            if (bufferCode == itemCode) {
+                inventario.items.get(i).Qnt -= itemQnt;
+
+                if (inventario.items.get(i).Qnt < 0) {
+                    inventario.items.get(i).Qnt = 0;
+                }
+                System.out.println("Updated item: " + inventario.items.get(i).name + " - Quantity: " + inventario.items.get(i).Qnt);
+                return;
+            }
+        }
+        System.out.println("Item not found.");
     }
 
     static void displayInventory(Inventario inventario){

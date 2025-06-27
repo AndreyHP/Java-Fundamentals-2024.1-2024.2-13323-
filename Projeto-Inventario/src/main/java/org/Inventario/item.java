@@ -14,4 +14,8 @@ public class item {
         this.code = code;
     }
 
+    public int getCode(){
+        return code;
+    }
+
 }
