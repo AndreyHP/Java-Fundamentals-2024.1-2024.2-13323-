@@ -34,6 +34,22 @@ public class ProductTester {
 
     }
 
+    static void Descontinuar(Inventario inventario){
+        int itemCode;
+
+        System.out.println("Codigo do Item");
+        itemCode = scanner.nextInt();
+
+        for (int i = 0; i < inventario.items.size(); i++) {
+            int bufferCode = inventario.items.get(i).getCode();
+            if (bufferCode == itemCode) {
+                inventario.items.remove(i);
+                return;
+            }
+        }
+        System.out.println("Item not found.");
+    }
+
     static void removeItem(Inventario inventario){
 
         int itemCode;

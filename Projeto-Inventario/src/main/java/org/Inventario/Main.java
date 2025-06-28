@@ -46,7 +46,9 @@ public class Main {
             }
 
             case 4: {
-
+                Descontinuar(inventario);
+                askUser();
+                break;
             }
 
             case 0: {
